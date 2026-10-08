@@ -5,19 +5,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                sh 'cd hello-devops-revision && mvn clean compile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'cd hello-devops-revision && mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                sh 'mvn package'
+                sh 'cd hello-devops-revision && mvn package'
             }
         }
     }
